@@ -2,12 +2,14 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+
 }
 
 body {
   background-color: rgb(38, 37, 19);
   font-size: 12px;
+
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -16,7 +18,10 @@ h1, h2, h3, h4, h5 {
 
 header, nav, footer, section, article, div {
   box-sizing: border-box;
+
 }
+
+
 
 /*
 *
@@ -24,60 +29,57 @@ header, nav, footer, section, article, div {
 *
 */
 
-.nav {
+nav {
   width: 100%;
-  margin: 0;
-  background-color: rgb(255, 255, 255, 0.8);
-  color: rgb(28, 23, 23);
-  /* font-size: 1rem; */
+  height: 40px;
+  line-height: 2.5;
+  background-color: rgb(38, 37, 19);
+  text-align: center;
   position: fixed;
+  z-index: 2;
 }
 
-.more__items{
-  display: inline;
-}
-
-.nav__list {
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/*
-*
-* MOBILE NAVIGATION
-*
-*/
-
-@media screen and (max-width: 768px) {
-  .nav__reduced {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-
-  }
-  .nav__list {
-    display: none;
-  }
-
-}
-
-.nav__item {
-  box-sizing: border-box;
+nav li {
   display: inline-block;
-  text-align: center;
+  font-size: 1rem;
+
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
   padding: 24px;
 
 }
 
-.nav a {
-  text-decoration: none;
-  color: rgb(47, 50, 48);
+ul {
+  padding: 0;
+  margin: 0;
+}
 
+nav a:hover {
+  font-weight: 900;
+  text-shadow: -1px -1px -1px;
+  cursor: pointer;
+}
+
+
+
+/* NAV REDUCED (MOBILE)*/
+
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(38, 37, 19, 3)
+}
+
+.dropdown li {
+  display: none;
+  text-align: left;
+}
+
+.dropdown__button:hover .dropdown li{
+  display: block;
 }
 
 /*
@@ -86,8 +88,111 @@ header, nav, footer, section, article, div {
 *
 */
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 768px){
   .nav__reduced {
     display: none;
   }
+}
+
+/*
+*
+* Images
+*
+*/
+
+
+/*
+*
+* Typography
+*
+*/
+
+body {
+  color: white;
+}
+
+h1 {
+  font-size: 18vmin;
+  z-index: 1;
+}
+
+.hero__subheader {
+  font-size: 6vmin;
+  z-index: 1;
+}
+
+h1, .hero__subheader {
+  color: white;
+  font-weight: 900;
+  text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
+}
+
+/*
+*
+* Sections
+*
+*/
+
+section {
+height: 100vh;
+}
+
+.hero {
+  background: url('../img/dani_centered-640.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero__header {
+  position: absolute;
+  top: 60vw;
+  text-align: center;
+}
+
+
+.bio {
+  background-color: rgb(38, 37, 19);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.8;
+  padding-top: 20%;
+
+
+}
+.music {
+  background-color: white;
+
+}
+
+.player {
+  height: 50%;
+  width: 100%;
+}
+
+.playlist {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+}
+
+.buttonplay {
+  width: 74px;
+  height: 74px;
+  border-style: solid;
+  border-width: 37px;
+  border-color: #202020;
+
+}
+
+
+.blog {
+  background-color: grey;
+}
+.contact {
+  background-color: white;
 }

@@ -6,26 +6,67 @@
     <title>Danielle Tatarian</title>
     <link rel="stylesheet" href="./styles/main.css">
 
-    <nav id="drawer" class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">BIO</a> </li>
-        <li class="nav__item"><a href="#">MUSIC</a> </li>
-        <li class="nav__item"><a href="#">HOME<img></a></li>
-        <li class="nav__item"><a href="#">BLOG</a></li>
-        <li class="nav__item"><a href="#">CONTACT</a></li>
-      </ul>
+  </head>
+  <header>
+
+    <nav>
       <ul class="nav__reduced">
-        <li class="nav__item"><a href="#">MUSIC</a> </li>
-        <li class="nav__item"><a href="#">HOME<img></a></li>
-        <li class="nav__item"><a href="#">MORE</a></li>
+        <li><a href="#bio" id="bio-link">BIO</a></li>
+        <!-- <li><a href="#home" id="home-link">HOME</a></li> -->
+        <li><a href="#music" id="music-link">MUSIC</a></li>
+        <li class="dropdown__button"><a href="#">MORE</a>
+          <ul class="dropdown">
+            <li><a href="https://thisiswhatihear.com/" target="_blank">BLOG</a></li>
+            <li><a href="#contact" id="contact-link">CONTACT</a></li>
+          </ul>
+        </li>
+
       </ul>
     </nav>
-  </head>
+
+  </header>
   <body>
-    <section class="intro">
-      <img src="./assets/dani.jpg" alt="Danielle sitting on a bed, with music sheets around her, holding a guitar"> 
-    </section>
+
+  <section id="homeSection" class="hero">
+    <!-- <img class="hero__pic"
+     srcset="./img/dani-320.jpg 320w,
+             ./img/dani-640.jpg 640w,
+             ./img/dani-1024.jpg 1024w"
+     sizes="(max-width: 320px) 320px,
+           (max-width: 640px) 640px,
+           (max-width: 1024px) 1024px"
+     src="./img/dani-1024.jpg"
+     alt="Danielle sitting on a bed, with music sheets around her, holding a guitar"> -->
+     <div class="hero__header">
+      <h1>Danielle Tatarian</h1>
+      <p class="hero__subheader">Vocalist and Songwriter</p>
+     </div>
+  </section>
+
+  <section id="bioSection" class="bio">
+    <hr>
+    <p>Danielle is a Seattle based singer-songwriter and classically trained vocalist who began singing and studying music at the age of 10.  She's had the privilege of singing in Carnegie Hall as part of the National Women’s Festival Chorus under the direction of Sandra Snow.  Danielle has also performed Beethoven’s 9th Symphony with the Marin Symphony Chorus. While in school, Danielle has worked privately with Natalie Lerch from Cornish College of the Arts and Diana Tash from the lA Opera.  During her time at Cornish College of the Arts, Danielle has performed in masterclasses for Michael Delos, David McDade, Nancy Zylstra, and Morgan Smith.  Most recently, Danielle appeared as Carrie Mae in Libby Larson’s one act opera, The Silver Fox, and made her debut with the Seattle Gilbert and Sullivan Society in their production of Yeomen of the Guard. She will graduate from Cornish with a Bachelors of Music in Decemeber 2016.</p>
+    <hr>
+  </section>
+
+  <section id="musicSection" class="music ">
+
+    <div class="player">
+      <button class="buttonplay"></button>
+    </div>
+    <div class="playlist">
+
+    </div>
+
+  </section>
+  <section class="blog">
+
+  </section>
+  <section id="contactSection"  class="contact">
+
+  </section>
   <!-- <img src="./assets/dani.jpg" alt="Danielle sitting on a bed, with music sheets around her, holding a guitar"> -->
 
   </body>
+  <script type="text/javascript" src="./scripts/app.js"></script>
 </html>
