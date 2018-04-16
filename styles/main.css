@@ -2,7 +2,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -20,7 +20,6 @@ header, nav, footer, section, article, div {
   box-sizing: border-box;
 
 }
-
 
 
 /*
@@ -101,6 +100,7 @@ nav a:hover {
 */
 
 
+
 /*
 *
 * Typography
@@ -163,36 +163,125 @@ height: 100vh;
   padding-top: 20%;
 
 
+/* MUSIC */
+
 }
 .music {
-  background-color: white;
+  background-color: rgb(38, 37, 19);
+  color: white;
 
 }
 
 .player {
   height: 50%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .playlist {
   height: 50%;
   width: 100%;
-  background-color: red;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.buttonplay {
+.playlist .song {
+  font-size: 1.5em;
+  margin: 0;
+  margin-top: 25px;
+  padding-left: 10%;
+
+}
+
+.playlist .author {
+  font-size: 0.7em;
+  padding-left: 10%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.progress__bar {
+  background-color: grey;
+  width: 80%;
+  height: 6px;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.progress {
+  background-color: white;
+  width: 0%;
+  height: 6px;
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* .button {
+  visibility: hidden;
+} */
+
+.button:focus {
+  outline: none;
+}
+
+.button__play {
+  background-color: rgb(38, 37, 19);
+  box-sizing: border-box;
   width: 74px;
   height: 74px;
-  border-style: solid;
-  border-width: 37px;
-  border-color: #202020;
+  border-width: 37px 0px 37px 74px;
+  border-color: transparent transparent transparent white;
+
 
 }
 
+.button__pause {
 
-.blog {
-  background-color: grey;
+  background-color: rgb(38, 37, 19);
+  width: 74px;
+  height: 74px;
+  border-style: double;
+  border-width: 0px 0px 0px 37px;
+  border-color: white;
+  /* margin-left: 10%; */
+
 }
+
 .contact {
-  background-color: white;
+
+  background-repeat: no-repeat;
+  height: 70vh;
+  background-size: cover;
+
+  position: relative;
 }
+
+.contact {
+  height:80vh;
+  background-image: url('../img/dani_uw-640.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+footer {
+  height: 20vh;
+  width: 100%;
+}
+
+/* .contact__form {
+  height: 60vh;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+
+} */

@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Danielle Tatarian</title>
     <link rel="stylesheet" href="./styles/main.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+    <script src="./node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
   </head>
   <header>
 
     <nav>
       <ul class="nav__reduced">
-        <li><a href="#bio" id="bio-link">BIO</a></li>
-        <!-- <li><a href="#home" id="home-link">HOME</a></li> -->
         <li><a href="#music" id="music-link">MUSIC</a></li>
-        <li class="dropdown__button"><a href="#">MORE</a>
+        <li><a href="#home" id="home-link">HOME</a></li>
+        <li class="dropdown__button"><a>MORE</a>
           <ul class="dropdown">
-            <li><a href="https://thisiswhatihear.com/" target="_blank">BLOG</a></li>
+            <li><a href="#bio" id="bio-link">BIO</a></li>
+            <li><a href="https://thisiswhatihear.com/"
+             target="_blank">BLOG</a></li>
             <li><a href="#contact" id="contact-link">CONTACT</a></li>
           </ul>
         </li>
-
       </ul>
     </nav>
 
@@ -52,20 +53,47 @@
   <section id="musicSection" class="music ">
 
     <div class="player">
-      <button class="buttonplay"></button>
+      <button class="button__play"></button>
     </div>
     <div class="playlist">
+      <p class="song">Islands</p>
+      <p class="author"><em>Danielle Tatarian</em></p>
+      <div class="progress__bar"> <span class="progress"></span> </div>
+
+      <p class="song">No Words</p>
+      <p class="author"><em>Danielle Tatarian</em></p>
+        <div class="progress__bar"> <span class="progress"></span> </div>
+      <p class="song">The Meaning of a Ritual</p>
+      <p class="author"><em>Villagers (Cover)</em></p>
+        <div class="progress__bar"> <span class="progress"></span> </div>
+      <audio id="songs">
+          <source id="islands" src="../dani_website/assets/islands.m4a">
+          <source id="no_words" src="../dani_website/assets/no_words.m4a">
+          <source id="ritual" src="../dani_website/assets/the_meaning_of_a_ritual.mp3">
+          Your browser does not support the audio element.
+      </audio>
+
+
 
     </div>
-
   </section>
-  <section class="blog">
 
-  </section>
   <section id="contactSection"  class="contact">
 
+    <form>
+      <input type="text" name="name" placeholder="Name">
+      <input type="email" name="email" placeholder="E-MAIL">
+      <input type="text" name="email" placeholder="Type Your Message here">
+      <input id="submit" type="submit" name=submit"" value="Submit">
+
+    </form>
+
   </section>
+  <footer>
+
+  </footer>
   <!-- <img src="./assets/dani.jpg" alt="Danielle sitting on a bed, with music sheets around her, holding a guitar"> -->
+
 
   </body>
   <script type="text/javascript" src="./scripts/app.js"></script>
