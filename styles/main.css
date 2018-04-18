@@ -56,12 +56,19 @@ ul {
   margin: 0;
 }
 
+/* MUST ADDRESS HOVER PROBLEM IN IOS */
+
 nav a:hover {
   font-weight: 900;
   text-shadow: -1px -1px -1px;
   cursor: pointer;
 }
 
+.highlight {
+  font-weight: 900;
+  text-shadow: -1px -1px -1px;
+  cursor: pointer;
+}
 
 
 /* NAV REDUCED (MOBILE)*/
@@ -158,6 +165,7 @@ height: 100vh;
 .bio {
   background-color: rgb(38, 37, 19);
   font-size: 0.9rem;
+  font-size: 2vh;
   text-align: center;
   line-height: 1.8;
   padding-top: 20%;
@@ -265,17 +273,41 @@ height: 100vh;
 }
 
 .contact {
-  height:80vh;
-  background-image: url('../img/dani_uw-640.jpg');
+  height:100vh;
+  background-image: url('../img/dani_uw-1024.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
 }
 
-footer {
-  height: 20vh;
-  width: 100%;
+
+form {
+  padding-top: 10%;
+}
+
+input, textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 3%;
+  border: 1px solid black;
+  width: 60%;
+}
+
+
+#submit {
+  font-size: 1.5em;
+  color: white;
+  font-weight: 900;
+  text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
+  background-color: transparent;
+  border: 3px solid white;
+  width: 50%;
+
 }
 
 /* .contact__form {

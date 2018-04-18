@@ -80,11 +80,11 @@
 
   <section id="contactSection"  class="contact">
 
-    <form>
-      <input type="text" name="name" placeholder="Name">
-      <input type="email" name="email" placeholder="E-MAIL">
-      <input type="text" name="email" placeholder="Type Your Message here">
-      <input id="submit" type="submit" name=submit"" value="Submit">
+    <form method="post" action="../scripts/mail.php">
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="email" name="email" placeholder="Your E-MAIL">
+      <textarea name="message" placeholder="Your Message Here"></textarea>
+      <input id="submit" type="submit" name="submit" value="Submit">
 
     </form>
 

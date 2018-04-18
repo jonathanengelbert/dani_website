@@ -9,7 +9,7 @@ const bioLink = document.getElementById('bio-link');
 const musicLink = document.getElementById('music-link');
 const homeLink = document.getElementById('home-link');
 const contactLink = document.getElementById('contact-link');
-
+const navBar = document.getElementsByTagName('nav')[0];
 
 //Anchors
 const bioAnchor = document.querySelector('#bioSection');
@@ -46,9 +46,57 @@ contactLink.addEventListener('click', function(){
   });
 });
 
+//HIGHLIGHT LINKS WHEN SCROLLING
+
+// get document coordinates of the element
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+
+}
+
+//elements coordinates
+
+let theNav = getCoords(navBar).top
+let homeAnchorCoord = getCoords(homeAnchor).top;
+let bioAnchorCoord = getCoords(bioAnchor).top;
+let musicAnchorCoord = getCoords(musicAnchor).top;
+let contactAnchorCoord = getCoords(contactAnchor).top;
+
+window.addEventListener('scroll', function(){
+theNav = getCoords(navBar).top;
+
+if(theNav >= homeAnchorCoord && theNav < bioAnchorCoord){
+  homeLink.classList.add('highlight');
+  bioLink.classList.remove('highlight')
+}
+ if(theNav >= bioAnchorCoord && theNav < musicAnchorCoord ){
+  homeLink.classList.remove('highlight');
+  musicLink.classList.remove('highlight');
+  bioLink.classList.add('highlight');
+}
+ if(theNav >= musicAnchorCoord && theNav < contactAnchorCoord){
+  contactLink.classList.remove('highlight');
+  bioLink.classList.remove('highlight');
+  musicLink.classList.add('highlight');
+}
+ if(theNav >= contactAnchorCoord){
+  musicLink.classList.remove('highlight');
+  contactLink.classList.add('highlight');
+}
+});
+
+
+
 //=================================================================
 //PLAYER
 //=================================================================
+
+let intervalId;
 
 const button = document.querySelector('.button__play');
 const songs = document.querySelector('#songs');
@@ -67,7 +115,7 @@ const ritualTrigger = document.querySelectorAll('.song')[2];
 //player
 const progress = document.querySelectorAll('.progress');
 
-let intervalId;
+
 
 
 
@@ -146,7 +194,7 @@ progressBar0.addEventListener("click", function(event){
   let position = ((event.clientX - this.offsetLeft) / this.offsetWidth * 100);
   progress[0].style.width = position+"%";
   songs.currentTime = position * 2;
-  
+
 
 });
 const progressBar1 = document.querySelectorAll('.progress__bar')[1];
