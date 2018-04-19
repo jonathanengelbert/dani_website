@@ -73,6 +73,13 @@ nav a:hover {
 
 /* NAV REDUCED (MOBILE)*/
 
+@media screen and (max-width: 767px){
+  .nav__full {
+    display: none;
+  }
+
+}
+
 .dropdown {
   position: absolute;
   z-index: 1;
@@ -98,7 +105,11 @@ nav a:hover {
   .nav__reduced {
     display: none;
   }
+  nav li{
+    padding-left: 5%;
+  }
 }
+
 
 /*
 *
@@ -165,7 +176,7 @@ height: 100vh;
 .bio {
   background-color: rgb(38, 37, 19);
   font-size: 0.9rem;
-  font-size: 2vh;
+  font-size: 2.5vh;
   text-align: center;
   line-height: 1.8;
   padding-top: 20%;
@@ -199,6 +210,7 @@ height: 100vh;
 
 .playlist .song {
   font-size: 1.5em;
+  font-size: 3vh;
   margin: 0;
   margin-top: 25px;
   padding-left: 10%;
@@ -207,6 +219,7 @@ height: 100vh;
 
 .playlist .author {
   font-size: 0.7em;
+  font-size: 1vh;
   padding-left: 10%;
   margin: 0;
   margin-bottom: 10px;

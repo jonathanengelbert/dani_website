@@ -1,15 +1,16 @@
 
-
 //=================================================================
 //SCROLLING
 //=================================================================
 
 //Anchor Links:
-const bioLink = document.getElementById('bio-link');
-const musicLink = document.getElementById('music-link');
-const homeLink = document.getElementById('home-link');
-const contactLink = document.getElementById('contact-link');
+const bioLink = document.querySelectorAll('.bio-link');
+const musicLink = document.querySelectorAll('.music-link');
+const homeLink = document.querySelectorAll('.home-link');
+const contactLink = document.querySelectorAll('.contact-link');
 const navBar = document.getElementsByTagName('nav')[0];
+
+const linksList = [bioLink, musicLink, homeLink, contactLink];
 
 //Anchors
 const bioAnchor = document.querySelector('#bioSection');
@@ -18,35 +19,63 @@ const homeAnchor = document.querySelector('#homeSection');
 const contactAnchor = document.querySelector('#contactSection');
 
 
-//LISTENERS
-bioLink.addEventListener('click', function(){
-  bioAnchor.scrollIntoView({
-    behavior: 'smooth'
-  });
-});
+//adds listeners to links
 
-//LISTENERS
-musicLink.addEventListener('click', function(){
-  musicAnchor.scrollIntoView({
-    behavior: 'smooth'
-  });
-});
+function unpackLinks(){
+  linksList.forEach(function(linkList){
+    linkList.forEach(function(link){
 
-//LISTENERS
-homeLink.addEventListener('click', function(){
-  homeAnchor.scrollIntoView({
-    behavior: 'smooth'
+    });
   });
-});
+}
 
-//LISTENERS
-contactLink.addEventListener('click', function(){
-  contactAnchor.scrollIntoView({
-    behavior: 'smooth'
+function addListenerToLinks(link, anchor){
+  link.forEach(function(link){
+    link.addEventListener('click', function(){
+      anchor.scrollIntoView({
+        behavior: 'smooth'
+      });
+        });
+      }
+)};
+
+addListenerToLinks(musicLink, musicAnchor);
+addListenerToLinks(bioLink, bioAnchor);
+addListenerToLinks(contactLink, contactAnchor);
+addListenerToLinks(homeLink, homeAnchor);
+
+
+function toggleLinkHighlight(targetLink){
+  unpackLinks();
+  linksList.forEach(function(link){
+    if(link != targetLink){
+        link[0].classList.remove('highlight');
+        link[1].classList.remove('highlight');
+    }
+    if(link == targetLink){
+      link[0].classList.add("highlight");
+      link[1].classList.add("highlight");
+    }
   });
-});
+}
 
-//HIGHLIGHT LINKS WHEN SCROLLING
+//HIGHLIGHT WHEN SCROLLING
+window.addEventListener('scroll', function(){
+theNav = getCoords(navBar).top + 100;
+
+if(theNav >= homeAnchorCoord && theNav < bioAnchorCoord){
+  toggleLinkHighlight(homeLink);
+}
+ if(theNav >= bioAnchorCoord && theNav < musicAnchorCoord ){
+  toggleLinkHighlight(bioLink);
+}
+ if(theNav >= musicAnchorCoord  && theNav < contactAnchorCoord){
+   toggleLinkHighlight(musicLink);
+}
+ if(theNav >= contactAnchorCoord){
+   toggleLinkHighlight(contactLink);
+  }
+});
 
 // get document coordinates of the element
 function getCoords(elem) {
@@ -58,45 +87,18 @@ function getCoords(elem) {
   };
 
 }
-
-//elements coordinates
-
-let theNav = getCoords(navBar).top
+let theNav = getCoords(navBar).top;
 let homeAnchorCoord = getCoords(homeAnchor).top;
 let bioAnchorCoord = getCoords(bioAnchor).top;
 let musicAnchorCoord = getCoords(musicAnchor).top;
 let contactAnchorCoord = getCoords(contactAnchor).top;
 
-window.addEventListener('scroll', function(){
-theNav = getCoords(navBar).top;
 
-if(theNav >= homeAnchorCoord && theNav < bioAnchorCoord){
-  homeLink.classList.add('highlight');
-  bioLink.classList.remove('highlight')
-}
- if(theNav >= bioAnchorCoord && theNav < musicAnchorCoord ){
-  homeLink.classList.remove('highlight');
-  musicLink.classList.remove('highlight');
-  bioLink.classList.add('highlight');
-}
- if(theNav >= musicAnchorCoord && theNav < contactAnchorCoord){
-  contactLink.classList.remove('highlight');
-  bioLink.classList.remove('highlight');
-  musicLink.classList.add('highlight');
-}
- if(theNav >= contactAnchorCoord){
-  musicLink.classList.remove('highlight');
-  contactLink.classList.add('highlight');
-}
-});
-
-
+//Elements Coordinates for Scrollling
 
 //=================================================================
 //PLAYER
 //=================================================================
-
-let intervalId;
 
 const button = document.querySelector('.button__play');
 const songs = document.querySelector('#songs');
@@ -115,7 +117,7 @@ const ritualTrigger = document.querySelectorAll('.song')[2];
 //player
 const progress = document.querySelectorAll('.progress');
 
-
+let intervalId;
 
 
 
