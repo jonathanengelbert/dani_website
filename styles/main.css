@@ -70,15 +70,15 @@ nav a:hover {
   cursor: pointer;
 }
 
-
+/*======================================================= */
 /* NAV REDUCED (MOBILE)*/
-
+/*======================================================= */
 @media screen and (max-width: 767px){
   .nav__full {
     display: none;
   }
 
-}
+
 
 .dropdown {
   position: absolute;
@@ -95,19 +95,63 @@ nav a:hover {
   display: block;
 }
 
-/*
-*
-* 769px+
-*
-*/
+.hero {
+  background: url('../img/dani_centered-640.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero__header {
+  position: absolute;
+  top: 60vw;
+  text-align: center;
+}
+
+}
+
+
+
+
+
+
+
+
+
+/*======================================================= */
+/* * NAV 768px -> 1000px */
+/*======================================================= */
 
 @media screen and (min-width: 768px){
   .nav__reduced {
     display: none;
   }
-  nav li{
-    padding-left: 5%;
+  nav {
+    height: 6%;
+
   }
+
+  nav li {
+    font-size: 2em;
+    padding: 1.5%;
+    line-height: 1.5;
+  }
+
+  .hero {
+    background: url('../img/dani-1024.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+  }
+
+  .hero__header {
+    position: absolute;
+    top: 45vw;
+    text-align: center;
+  }
+
 }
 
 
@@ -158,19 +202,12 @@ section {
 height: 100vh;
 }
 
-.hero {
-  background: url('../img/dani_centered-640.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
-}
 
-.hero__header {
-  position: absolute;
-  top: 60vw;
-  text-align: center;
-}
+/*======================================================= */
+/* * HOME MOBILE
+/*======================================================= */
+
+
 
 
 .bio {
@@ -180,6 +217,12 @@ height: 100vh;
   text-align: center;
   line-height: 1.8;
   padding-top: 20%;
+
+  /*======================================================= */
+  /* * HOME 768 --> 1000px
+  /*======================================================= */
+
+
 
 
 /* MUSIC */
